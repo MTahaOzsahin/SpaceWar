@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class enemy : MonoBehaviour
 {
     public GameObject impact_effect;
-    public GameObject enenmy_laser;
+    public GameObject enemy_laser;
     public Image enenmy_bar;
 
     public Transform player;
@@ -17,7 +17,7 @@ public class enemy : MonoBehaviour
     float current_health = 100.0f;
 
     float movement_speed = 3.0f;
-    float laser_speed = 500.0f;
+    float laser_speed = 300f;
 
     float fire_rate = 0.2f;
     float fire_time = 0f;
@@ -26,10 +26,17 @@ public class enemy : MonoBehaviour
 
     void laserfire()
     {
-        GameObject new_laser = Instantiate(enenmy_laser, transform.position, Quaternion.identity);
-        new_laser.GetComponent<Rigidbody2D>().AddForce(Vector2.down * laser_speed);
+        GameObject new_laser_left = Instantiate(enemy_laser, new Vector3(transform.position.x - .45f, transform.position.y,
+            transform.position.z), Quaternion.identity);
+        new_laser_left.GetComponent<Rigidbody2D>().AddForce(Vector2.down * laser_speed);
 
-        Destroy(new_laser, 2.0f);
+        Destroy(new_laser_left, 2.0f);
+
+        GameObject new_laser_right = Instantiate(enemy_laser, new Vector3(transform.position.x + .45f, transform.position.y,
+            transform.position.z), Quaternion.identity);
+        new_laser_right.GetComponent<Rigidbody2D>().AddForce(Vector2.down * laser_speed);
+
+        Destroy(new_laser_right, 2.0f);
     }
 
     void enemymovement()

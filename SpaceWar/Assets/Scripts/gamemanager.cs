@@ -6,7 +6,12 @@ using UnityEngine.SceneManagement;
 public class gamemanager : MonoBehaviour
 {
     public GameObject end_game_panel;
+  
 
+    private void Awake()
+    {
+         
+    }
 
 
     public void show_panel()
@@ -26,7 +31,7 @@ public class gamemanager : MonoBehaviour
     public void try_again()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Pre_game");
 
     }
 
@@ -34,5 +39,7 @@ public class gamemanager : MonoBehaviour
     {
         Application.Quit();
     }
+
     
 }
+

@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 6301688489116296469}
   - component: {fileID: 6712162967188209875}
   - component: {fileID: 5148450136845850238}
-  - component: {fileID: -5455599950890898090}
+  - component: {fileID: 5514965273085167412}
   m_Layer: 0
-  m_Name: enemy
-  m_TagString: Untagged
+  m_Name: enemy_small
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7532705444415454099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.5135396, y: 1.8671954, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9a693015c7ceea84590b4163534a7e3a, type: 3}
-  m_Color: {r: 0.7735849, g: 0.3539516, b: 0.3539516, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -95,7 +95,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-5455599950890898090
+--- !u!114 &5514965273085167412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,11 +141,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7532705444415454099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc0846c94e44d87419555e3ca7d02703, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e088f1ac85083b419074179e5697cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impact_effect: {fileID: 0}
-  enemy_laser: {fileID: 0}
-  enenmy_bar: {fileID: 0}
-  player: {fileID: 0}
+  impact_effect: {fileID: 3286725098780569502, guid: e8580ede92b9dd3499e712c95c5aad70, type: 3}
+  enemy_laser: {fileID: 7845298406507275683, guid: 858b86a2bbdd48941b988abe1788fe2b, type: 3}
+  enemy_small: {fileID: 7532705444415454099}
   gamemanager: {fileID: 0}
+  enemysmallrigibody2d: {fileID: 0}
+  enemysmallcollider2d: {fileID: 0}
+  enemysmallrenderer: {fileID: 0}
+  enemyspawnercount: 0

@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impact_effect: {fileID: 3286725098780569502, guid: e8580ede92b9dd3499e712c95c5aad70, type: 3}
-  enenmy_laser: {fileID: 7845298406507275683, guid: c9f5f411777890f4d9c6e6ebaa9586c7, type: 3}
+  enemy_laser: {fileID: 7845298406507275683, guid: c9f5f411777890f4d9c6e6ebaa9586c7, type: 3}
   enenmy_bar: {fileID: 1389843991}
   player: {fileID: 1153629099}
   gamemanager: {fileID: 1623627394}
@@ -2739,6 +2739,10 @@ PrefabInstance:
     - target: {fileID: 7532705444415454099, guid: 4ce5e59634ca45c46b5c4d500b2a8b51, type: 3}
       propertyPath: m_Name
       value: enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532705444415454099, guid: 4ce5e59634ca45c46b5c4d500b2a8b51, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ce5e59634ca45c46b5c4d500b2a8b51, type: 3}
