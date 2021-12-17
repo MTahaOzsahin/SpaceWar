@@ -48,13 +48,13 @@ public class player_pregame : MonoBehaviour
             transform.position.z), Quaternion.identity);
         new_laser_left.GetComponent<Rigidbody2D>().AddForce(Vector2.up * laser_speed);
 
-        Destroy(new_laser_left, 2.0f);
+        Destroy(new_laser_left, 0.45f);
 
         GameObject new_laser_right = Instantiate(player_laser, new Vector3(transform.position.x + .45f, transform.position.y,
             transform.position.z), Quaternion.identity);
         new_laser_right.GetComponent<Rigidbody2D>().AddForce(Vector2.up * laser_speed);
 
-        Destroy(new_laser_right, 2.0f);
+        Destroy(new_laser_right, 0.45f);
     }
     void combat()
     {
