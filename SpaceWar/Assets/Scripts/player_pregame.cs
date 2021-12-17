@@ -1,22 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class player_pregame : MonoBehaviour
 {
     public GameObject impact_effect;
     public GameObject player_laser;
     public gamemanager gamemanager;
-    public Rigidbody2D rigidbody2D;
+    public Image player_bar;
+    public Rigidbody2D player_pregame_rigibody2d;
+
+    float health = 300f;
+    float current_health = 100.0f;
 
 
 
     float movement_speed = 5.0f;
-    float laser_speed = 500.0f;
+    float laser_speed = 1000f;
 
     private void Awake()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        player_pregame_rigibody2d = GetComponent<Rigidbody2D>();
     }
 
 
@@ -55,6 +61,7 @@ public class player_pregame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             laserfire();
+
         }
     }
 
@@ -63,7 +70,8 @@ public class player_pregame : MonoBehaviour
         if (collision.gameObject.CompareTag("enemy_laser"))
         {
             Destroy(collision.gameObject);
-            vanish();
+            lowerhealth(5.0f);
+            
         }
     }
 
@@ -75,6 +83,17 @@ public class player_pregame : MonoBehaviour
 
         gamemanager.show_panel();
 
+    }
+
+    void lowerhealth(float value)
+    {
+        current_health -= value;
+        player_bar.fillAmount = current_health / health;
+
+        if (current_health <= 0)
+        {
+            vanish();
+        }
     }
     private void Update()
     {

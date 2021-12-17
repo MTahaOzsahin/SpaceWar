@@ -31,7 +31,7 @@ public class gamemanager : MonoBehaviour
     public void try_again()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Pre_game");
+        SceneManager.LoadScene("Scenes/Pre_game");
 
     }
 

@@ -70,7 +70,8 @@ public class enemy_pregame : MonoBehaviour
 
         if (transform.position.y <= 4 && transform.position.y >=3.8)
         {
-            
+            if (Time.time >= fire_time)
+            {
                 GameObject new_laser_left = Instantiate(enemy_laser, new Vector3(transform.position.x - .45f, transform.position.y,
            transform.position.z), Quaternion.identity);
                 new_laser_left.GetComponent<Rigidbody2D>().AddForce(Vector2.down * laser_speed);
@@ -82,12 +83,9 @@ public class enemy_pregame : MonoBehaviour
                 new_laser_right.GetComponent<Rigidbody2D>().AddForce(Vector2.down * laser_speed);
 
                 Destroy(new_laser_right, 2.0f);
-
-                
-            
-        }
-
-        
+                fire_time = Time.time + fire_rate;
+            }    
+        }        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
